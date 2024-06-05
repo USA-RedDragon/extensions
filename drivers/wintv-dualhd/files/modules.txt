@@ -1,0 +1,13 @@
+modules.order
+modules.builtin
+modules.builtin.modinfo
+kernel/drivers/i2c/i2c-mux.ko
+kernel/drivers/media/dvb-core/dvb-core.ko
+kernel/drivers/media/v4l2-core/tuner.ko
+kernel/drivers/media/usb/em28xx/em28xx.ko
+kernel/drivers/media/usb/em28xx/em28xx-v4l.ko
+kernel/drivers/media/usb/em28xx/em28xx-dvb.ko
+kernel/drivers/media/common/tveeprom.ko
+kernel/drivers/media/i2c/video-i2c.ko
+kernel/drivers/media/tuners/si2157.ko
+kernel/drivers/media/dvb-frontends/lgdt3306a.ko

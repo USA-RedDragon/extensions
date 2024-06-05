@@ -1,0 +1,10 @@
+version: v1alpha1
+metadata:
+  name: wintv-dualhd
+  version: "$VERSION"
+  author: Jacob McSwain
+  description: |
+    This system extension provides the kernel modules required for the Hauppauge WinTV-DualHD device built against a specific Talos version.
+  compatibility:
+    talos:
+      version: ">= v1.8.0"
