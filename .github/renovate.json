@@ -4,10 +4,11 @@
         ":semanticCommitScopeDisabled",
         "schedule:earlyMondays"
     ],
-    "regexManagers": [
+    "customManagers": [
         {
-            "fileMatch": [
-                "vars.yaml"
+            "customType": "regex",
+            "managerFilePatterns": [
+                "/vars.yaml/"
             ],
             "matchStrings": [
                 "# renovate: datasource=(?<datasource>.*?)(?:\\s+extractVersion=(?<extractVersion>.+?))?(?:\\s+versioning=(?<versioning>.+?))?\\s+depName=(?<depName>.+?)?\\s(?:.*_(?:version|VERSION):\\s+(?<currentValue>.*))?(?:(\\s)?.*_(?:ref|REF):\\s+(?<currentDigest>.*))?"
@@ -15,8 +16,9 @@
             "versioningTemplate": "{{#if versioning}}{{versioning}}{{else}}semver{{/if}}"
         },
         {
-            "fileMatch": [
-                "Pkgfile"
+            "customType": "regex",
+            "managerFilePatterns": [
+                "/Pkgfile/"
             ],
             "matchStrings": [
                 "# renovate: datasource=(?<datasource>.*?)(?:\\s+extractVersion=(?<extractVersion>.+?))?(?:\\s+versioning=(?<versioning>.+?))?\\s+depName=(?<depName>.+?)?\\s(?:\\s+.*_(?:version|VERSION):\\s+(?<currentValue>.*))?(?:\\s.*_(?:ref|REF):\\s+(?<currentDigest>.*))?"
@@ -24,8 +26,9 @@
             "versioningTemplate": "{{#if versioning}}{{versioning}}{{else}}semver{{/if}}"
         },
         {
-            "fileMatch": [
-                "Pkgfile"
+            "customType": "regex",
+            "managerFilePatterns": [
+                "/Pkgfile/"
             ],
             "matchStrings": [
                 "ghcr.io\\/siderolabs\\/bldr:(?<currentValue>v.*)"
@@ -35,8 +38,9 @@
             "versioningTemplate": "semver"
         },
         {
-            "fileMatch": [
-                "Makefile"
+            "customType": "regex",
+            "managerFilePatterns": [
+                "/Makefile/"
             ],
             "matchStrings": [
                 "BLDR_RELEASE\\s+\\?=\\s+(?<currentValue>.*)\\n"
@@ -77,7 +81,7 @@
             "versioning": "regex:^(?<major>\\d+)-(?<minor>\\d+)-?(?<patch>\\d+)?$"
         },
         {
-            "matchPackagePatterns": [
+            "matchPackageNames": [
                 "*"
             ],
             "matchDatasources": [
@@ -86,7 +90,7 @@
             "groupName": "container images"
         },
         {
-            "matchPackagePatterns": [
+            "matchPackageNames": [
                 "*"
             ],
             "matchDatasources": [
@@ -96,7 +100,7 @@
             "groupName": "go packages"
         },
         {
-            "matchPackagePatterns": [
+            "matchPackageNames": [
                 "*"
             ],
             "matchDatasources": [
@@ -105,7 +109,7 @@
             "groupName": "node packages"
         },
         {
-            "matchPackagePatterns": [
+            "matchPackageNames": [
                 "*"
             ],
             "matchDatasources": [
